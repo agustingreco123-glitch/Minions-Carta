@@ -1,0 +1,1160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #fff9d8;
+    color: #252525;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* ==================================================
+PANTALLA DE INICIO
+================================================== */
+
+.pantalla-inicio {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(255,255,255,0.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffe75c 0%,
+            #ffd928 50%,
+            #f7c900 100%
+        );
+}
+
+/* ==================================================
+CONTENIDO
+================================================== */
+
+.inicio-contenido {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 20px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: aparecer 1.2s ease forwards;
+}
+
+/* ==================================================
+ETIQUETA SUPERIOR
+================================================== */
+
+.etiqueta-inicial {
+
+```
+display: inline-block;
+
+padding: 10px 20px;
+
+margin-bottom: 20px;
+
+border-radius: 50px;
+
+background: rgba(255,255,255,0.45);
+
+font-size: 15px;
+
+font-weight: bold;
+
+backdrop-filter: blur(5px);
+
+box-shadow:
+    0 5px 15px rgba(0,0,0,0.08);
+```
+
+}
+
+/* ==================================================
+MINIONS
+================================================== */
+
+.minion-portada {
+
+```
+width: 210px;
+height: 210px;
+
+margin: 0 auto 20px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+position: relative;
+
+animation:
+    flotar 3s ease-in-out infinite;
+```
+
+}
+
+.minion-portada::before {
+
+```
+content: "";
+
+position: absolute;
+
+width: 190px;
+height: 190px;
+
+border-radius: 50%;
+
+background: rgba(255,255,255,0.4);
+
+box-shadow:
+    0 15px 40px rgba(0,0,0,0.15);
+
+z-index: -1;
+```
+
+}
+
+.minion-portada img {
+
+```
+width: 190px;
+
+max-height: 190px;
+
+object-fit: contain;
+
+border-radius: 20px;
+
+filter:
+    drop-shadow(
+        0 10px 15px rgba(0,0,0,0.18)
+    );
+```
+
+}
+
+/* ==================================================
+TEXTOS
+================================================== */
+
+.pequeno-texto {
+
+```
+font-size: 18px;
+
+font-weight: bold;
+
+margin-bottom: 15px;
+
+text-shadow:
+    0 2px 5px rgba(255,255,255,0.4);
+```
+
+}
+
+h1 {
+
+```
+font-size:
+    clamp(38px, 7vw, 70px);
+
+line-height: 1.05;
+
+margin-bottom: 20px;
+
+letter-spacing: -2px;
+
+text-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+```
+
+}
+
+.subtitulo {
+
+```
+font-size: 19px;
+
+max-width: 550px;
+
+margin:
+    0 auto 30px;
+
+line-height: 1.6;
+```
+
+}
+
+/* ==================================================
+BOTÓN
+================================================== */
+
+.boton-principal {
+
+```
+border: none;
+
+cursor: pointer;
+
+padding:
+    17px 35px;
+
+border-radius: 50px;
+
+font-size: 19px;
+
+font-weight: bold;
+
+color: #252525;
+
+background: white;
+
+box-shadow:
+    0 10px 25px rgba(0,0,0,0.18);
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+animation:
+    boton-latido 2.2s ease-in-out infinite;
+```
+
+}
+
+.boton-principal:hover {
+
+```
+transform:
+    translateY(-5px)
+    scale(1.04);
+
+box-shadow:
+    0 15px 35px rgba(0,0,0,0.25);
+
+background:
+    #fffbea;
+```
+
+}
+
+.boton-principal:active {
+
+```
+transform:
+    scale(0.96);
+```
+
+}
+
+.boton-principal span {
+
+```
+display: inline-block;
+
+margin:
+    0 5px;
+```
+
+}
+
+/* ==================================================
+TEXTO INFERIOR
+================================================== */
+
+.texto-abajo {
+
+```
+margin-top: 25px;
+
+font-size: 14px;
+
+opacity: 0.7;
+
+font-style: italic;
+```
+
+}
+
+/* ==================================================
+CORAZONES FLOTANTES
+================================================== */
+
+.corazon-flotante {
+
+```
+position: absolute;
+
+font-size: 30px;
+
+opacity: 0.65;
+
+z-index: 2;
+
+animation:
+    subir-corazon
+    6s ease-in-out infinite;
+```
+
+}
+
+.corazon-1 {
+left: 10%;
+bottom: -50px;
+animation-delay: 0s;
+}
+
+.corazon-2 {
+left: 25%;
+bottom: -50px;
+animation-delay: 1.5s;
+}
+
+.corazon-3 {
+left: 40%;
+bottom: -50px;
+animation-delay: 3s;
+}
+
+.corazon-4 {
+right: 30%;
+bottom: -50px;
+animation-delay: 2s;
+}
+
+.corazon-5 {
+right: 15%;
+bottom: -50px;
+animation-delay: 4s;
+}
+
+.corazon-6 {
+right: 5%;
+bottom: -50px;
+animation-delay: 5s;
+}
+
+/* ==================================================
+BURBUJAS
+================================================== */
+
+.burbuja {
+
+```
+position: absolute;
+
+border-radius: 50%;
+
+background:
+    rgba(255,255,255,0.18);
+
+filter:
+    blur(1px);
+```
+
+}
+
+.burbuja-1 {
+
+```
+width: 200px;
+height: 200px;
+
+top: -80px;
+left: -60px;
+```
+
+}
+
+.burbuja-2 {
+
+```
+width: 300px;
+height: 300px;
+
+right: -120px;
+bottom: -100px;
+```
+
+}
+
+.burbuja-3 {
+
+```
+width: 100px;
+height: 100px;
+
+top: 20%;
+right: 10%;
+```
+
+}
+
+/* ==================================================
+ANIMACIONES PORTADA
+================================================== */
+
+@keyframes aparecer {
+
+```
+from {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+```
+
+}
+
+@keyframes flotar {
+
+```
+0%,
+100% {
+
+    transform:
+        translateY(0)
+        rotate(-2deg);
+
+}
+
+50% {
+
+    transform:
+        translateY(-15px)
+        rotate(2deg);
+
+}
+```
+
+}
+
+@keyframes boton-latido {
+
+```
+0%,
+100% {
+
+    transform:
+        scale(1);
+
+}
+
+50% {
+
+    transform:
+        scale(1.03);
+
+}
+```
+
+}
+
+@keyframes subir-corazon {
+
+```
+0% {
+
+    transform:
+        translateY(0)
+        rotate(0deg);
+
+    opacity: 0;
+
+}
+
+15% {
+
+    opacity: 0.7;
+
+}
+
+50% {
+
+    transform:
+        translateY(-50vh)
+        rotate(15deg);
+
+}
+
+100% {
+
+    transform:
+        translateY(-110vh)
+        rotate(-15deg);
+
+    opacity: 0;
+
+}
+```
+
+}
+
+/* ==================================================
+CARTA
+================================================== */
+
+.carta-container {
+
+```
+min-height: 100vh;
+
+padding:
+    70px 20px;
+
+background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(255,255,255,0.7),
+        transparent 30%
+    ),
+    #fff9d8;
+```
+
+}
+
+.carta {
+
+```
+max-width: 800px;
+
+margin:
+    auto;
+
+padding:
+    55px;
+
+background:
+    rgba(255,255,255,0.92);
+
+border-radius:
+    25px;
+
+box-shadow:
+    0 20px 60px rgba(0,0,0,0.12);
+
+position:
+    relative;
+```
+
+}
+
+.carta h2 {
+
+```
+text-align:
+    center;
+
+font-size:
+    42px;
+
+margin-bottom:
+    40px;
+```
+
+}
+
+.carta p {
+
+```
+font-family:
+    Georgia,
+    serif;
+
+font-size:
+    19px;
+
+line-height:
+    1.9;
+
+margin-bottom:
+    28px;
+```
+
+}
+
+.carta-decoracion {
+
+```
+text-align:
+    center;
+
+font-size:
+    40px;
+
+margin-bottom:
+    20px;
+```
+
+}
+
+/* ==================================================
+GIFS
+================================================== */
+
+.gif-container {
+
+```
+text-align:
+    center;
+
+margin:
+    35px 0;
+```
+
+}
+
+.gif-container img {
+
+```
+max-width:
+    280px;
+
+width:
+    80%;
+
+border-radius:
+    20px;
+
+box-shadow:
+    0 10px 30px rgba(0,0,0,0.15);
+```
+
+}
+
+.gif-pelea img {
+
+```
+max-width:
+    230px;
+```
+
+}
+
+.final-gif img {
+
+```
+max-width:
+    320px;
+```
+
+}
+
+/* ==================================================
+FOTO
+================================================== */
+
+.foto-container {
+
+```
+margin:
+    50px 0;
+
+text-align:
+    center;
+```
+
+}
+
+.foto-container img {
+
+```
+width:
+    100%;
+
+max-width:
+    650px;
+
+border-radius:
+    25px;
+
+box-shadow:
+    0 15px 40px rgba(0,0,0,0.2);
+```
+
+}
+
+.foto-frase {
+
+```
+margin-top:
+    18px;
+
+font-family:
+    "Trebuchet MS",
+    sans-serif !important;
+
+font-style:
+    italic;
+
+opacity:
+    0.7;
+```
+
+}
+
+/* ==================================================
+SEPARADOR
+================================================== */
+
+.separador {
+
+```
+text-align:
+    center;
+
+font-size:
+    25px;
+
+margin:
+    40px 0;
+```
+
+}
+
+/* ==================================================
+VIDEO
+================================================== */
+
+.video-intro {
+
+```
+margin:
+    70px 0 40px;
+
+padding:
+    40px 25px;
+
+text-align:
+    center;
+
+border-radius:
+    25px;
+
+background:
+    #fff2a8;
+
+box-shadow:
+    inset 0 0 0 2px rgba(0,0,0,0.05);
+```
+
+}
+
+.video-icon {
+
+```
+font-size:
+    55px;
+
+margin-bottom:
+    20px;
+```
+
+}
+
+.video-intro h3 {
+
+```
+font-size:
+    30px;
+
+margin-bottom:
+    15px;
+```
+
+}
+
+.video-intro p {
+
+```
+font-family:
+    "Trebuchet MS",
+    sans-serif;
+
+font-size:
+    17px;
+
+margin-bottom:
+    25px;
+```
+
+}
+
+.boton-video {
+
+```
+border:
+    none;
+
+cursor:
+    pointer;
+
+padding:
+    16px 30px;
+
+border-radius:
+    50px;
+
+font-size:
+    18px;
+
+font-weight:
+    bold;
+
+background:
+    white;
+
+box-shadow:
+    0 8px 20px rgba(0,0,0,0.18);
+
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+```
+
+}
+
+.boton-video:hover {
+
+```
+transform:
+    translateY(-4px)
+    scale(1.03);
+
+box-shadow:
+    0 12px 25px rgba(0,0,0,0.25);
+```
+
+}
+
+.video-container {
+
+```
+margin:
+    30px 0 70px;
+
+text-align:
+    center;
+```
+
+}
+
+.video-container video {
+
+```
+width:
+    100%;
+
+max-width:
+    700px;
+
+border-radius:
+    20px;
+
+box-shadow:
+    0 15px 40px rgba(0,0,0,0.2);
+```
+
+}
+
+.video-final {
+
+```
+margin-top:
+    25px;
+```
+
+}
+
+/* ==================================================
+FINAL
+================================================== */
+
+.final-carta {
+
+```
+margin-top:
+    70px;
+
+padding-top:
+    50px;
+
+border-top:
+    2px dashed #e2c72e;
+
+text-align:
+    center;
+```
+
+}
+
+.final-carta p {
+
+```
+text-align:
+    left;
+```
+
+}
+
+.frase-final {
+
+```
+margin:
+    50px 0;
+
+padding:
+    35px;
+
+border-radius:
+    25px;
+
+background:
+    #fff2a8;
+```
+
+}
+
+.frase-final p {
+
+```
+text-align:
+    center;
+
+font-family:
+    "Trebuchet MS",
+    sans-serif;
+
+font-size:
+    24px;
+
+font-weight:
+    bold;
+```
+
+}
+
+.corazones-final {
+
+```
+font-size:
+    45px;
+
+margin:
+    30px 0;
+
+animation:
+    latido
+    1.5s infinite;
+```
+
+}
+
+.final-carta h2 {
+
+```
+margin-top:
+    30px;
+
+font-size:
+    40px;
+```
+
+}
+
+.firma {
+
+```
+text-align:
+    center !important;
+
+font-family:
+    "Trebuchet MS",
+    sans-serif !important;
+
+font-size:
+    22px !important;
+
+margin-top:
+    20px;
+```
+
+}
+
+.oculto {
+
+```
+display:
+    none !important;
+```
+
+}
+
+/* ==================================================
+ANIMACIONES CARTA
+================================================== */
+
+@keyframes latido {
+
+```
+0%,
+100% {
+
+    transform:
+        scale(1);
+
+}
+
+50% {
+
+    transform:
+        scale(1.15);
+
+}
+```
+
+}
+
+/* ==================================================
+CELULAR
+================================================== */
+
+@media (max-width: 600px) {
+
+```
+.carta-container {
+
+    padding:
+        20px 10px;
+
+}
+
+.carta {
+
+    padding:
+        30px 22px;
+
+    border-radius:
+        18px;
+
+}
+
+.carta h2 {
+
+    font-size:
+        32px;
+
+}
+
+.carta p {
+
+    font-size:
+        17px;
+
+    line-height:
+        1.75;
+
+}
+
+h1 {
+
+    font-size:
+        40px;
+
+}
+
+.subtitulo {
+
+    font-size:
+        17px;
+
+}
+
+.minion-portada {
+
+    width:
+        170px;
+
+    height:
+        170px;
+
+}
+
+.minion-portada img {
+
+    width:
+        155px;
+
+    max-height:
+        155px;
+
+}
+
+.video-intro h3 {
+
+    font-size:
+        24px;
+
+}
+
+.final-carta h2 {
+
+    font-size:
+        32px;
+
+}
+```
+
+}
+
